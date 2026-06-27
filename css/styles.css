@@ -1,29 +1,82 @@
-/* Estilos generales para limpiar márgenes */
+/* ==========================================
+   1. Reset de Estilos Básicos
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Tipografía limpia idéntica al ejemplo */
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ocupa todo el alto de la pantalla */
-}
-
-.contenedor-bienvenida {
-    text-align: center;
-    padding: 20px;
+/* ==========================================
+   2. Estructura del Header y Contenedor
+   ========================================== */
+.header {
+    width: 100%;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sutil sombra inferior opcional */
 }
 
-h1 {
-    color: #00766c;
-    margin-bottom: 10px;
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* ==========================================
+   3. Estilos del Logo
+   ========================================== */
+.logo {
+    font-size: 24px;
+    color: #000000;
+    letter-spacing: -0.5px;
+}
+
+.logo-bold {
+    font-weight: bold;
+}
+
+/* ==========================================
+   4. Enlaces de Navegación (Centro)
+   ========================================== */
+.navigation {
+    display: flex;
+    gap: 30px; /* Separación proporcional entre menús */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2b85ff; /* Color de énfasis al pasar el cursor */
+}
+
+/* ==========================================
+   5. Botón "BOOK TRIP" (Derecha)
+   ========================================== */
+.btn-book {
+    text-decoration: none;
+    background-color: #2b85ff; /* Color azul de la imagen */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 28px;
+    border-radius: 50px; /* Bordes completamente redondeados (estilo píldora) */
+    letter-spacing: 0.5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-book:hover {
+    background-color: #1a6fd4; /* Variante más oscura al pasar el cursor */
 }
