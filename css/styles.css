@@ -5,17 +5,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif; /* Tipografía limpia idéntica al ejemplo */
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    min-height: 100vh;
 }
 
 /* ==========================================
-   2. Estructura del Header y Contenedor
+   2. Estilos del Menú de Navegación (Preservado)
    ========================================== */
 .header {
     width: 100%;
     background-color: #ffffff;
     padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sutil sombra inferior opcional */
 }
 
 .nav-container {
@@ -27,9 +31,6 @@
     padding: 0 40px;
 }
 
-/* ==========================================
-   3. Estilos del Logo
-   ========================================== */
 .logo {
     font-size: 24px;
     color: #000000;
@@ -40,12 +41,9 @@
     font-weight: bold;
 }
 
-/* ==========================================
-   4. Enlaces de Navegación (Centro)
-   ========================================== */
 .navigation {
     display: flex;
-    gap: 30px; /* Separación proporcional entre menús */
+    gap: 30px;
 }
 
 .nav-link {
@@ -58,25 +56,160 @@
 }
 
 .nav-link:hover {
-    color: #2b85ff; /* Color de énfasis al pasar el cursor */
+    color: #2b85ff;
 }
 
-/* ==========================================
-   5. Botón "BOOK TRIP" (Derecha)
-   ========================================== */
 .btn-book {
     text-decoration: none;
-    background-color: #2b85ff; /* Color azul de la imagen */
+    background-color: #2b85ff;
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     padding: 12px 28px;
-    border-radius: 50px; /* Bordes completamente redondeados (estilo píldora) */
+    border-radius: 50px;
     letter-spacing: 0.5px;
     display: inline-block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .btn-book:hover {
-    background-color: #1a6fd4; /* Variante más oscura al pasar el cursor */
+    background-color: #1a6fd4;
+}
+
+/* ==========================================
+   3. Estilos de la Sección Hero (Nueva Sección)
+   ========================================== */
+.hero-section {
+    max-width: 1300px; /* Margen para simular el contenedor redondeado exterior */
+    margin: 10px auto 40px auto;
+    padding: 60px 40px;
+    
+    /* Fondo con degradado de cielo azul y nubes según la referencia */
+    background: linear-gradient(135deg, #74b3e8 0%, #b3d7f4 50%, #eef5fc 100%);
+    border-radius: 30px; /* Bordes exteriores redondeados como la tarjeta de la imagen */
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Contenido de texto izquierdo */
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 13px;
+    font-weight: bold;
+    color: #111111;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.hero-title {
+    font-size: 54px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.15;
+    margin-bottom: 35px;
+    letter-spacing: -1px;
+}
+
+/* Contenedor de Botones Inferiores */
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-hero-action {
+    text-decoration: none;
+    background-color: #2b85ff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 16px 36px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-hero-action:hover {
+    background-color: #1a6fd4;
+    transform: translateY(-2px);
+}
+
+/* Botón Circular de Reproducción */
+.btn-play {
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.play-icon {
+    width: 18px;
+    height: 18px;
+    color: #2b85ff;
+    margin-left: 2px; /* Corrección óptica de centrado del triángulo de reproducción */
+}
+
+/* Contenedor de la imagen derecha */
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+}
+
+.hero-bus-image {
+    max-width: 110%; /* Permite un leve desborde controlado típico de estas plantillas */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive básico para pantallas medianas o móviles */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-image-wrapper {
+        justify-content: center;
+    }
+    .hero-bus-image {
+        max-width: 90%;
+    }
+    .hero-title {
+        font-size: 38px;
+    }
 }
